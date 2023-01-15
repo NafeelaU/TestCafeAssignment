@@ -1,0 +1,7 @@
+{
+"browser":"chrome",
+"baseUrl": "https://www.saucedemo.com",
+"UserName":"performance_glitch_user",
+"Password":"secret_sauce",
+"skipUncaughtErrors": true
+}
