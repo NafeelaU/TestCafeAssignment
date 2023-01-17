@@ -4,12 +4,17 @@ import HomePage from '../PageObject/Pages/HomePage';
 import CartPage from '../PageObject/Pages/CartPage';
 import DetailsPage from '../PageObject/Pages/DetailsPage';
 import CompletePage from '../PageObject/Pages/CompletePage';
-// import { faker } from '@faker-js/faker';
-//var faker = require('@faker-js/faker');
+import { faker } from '@faker-js/faker';
+const { userVariables } =require('testcafe');
 
+console.log(userVariables)
 
-//
 fixture ('login test').page`https://www.saucedemo.com`;
+
+
+var randomFirstName = faker.name.firstName( 'female' );
+var randomLasttName = faker.name.lastName('female');
+
 
 
 test('Login Page', async (t) => {
@@ -32,16 +37,13 @@ await t
 
 .click('#checkout').wait(3000)
 
+
+
 //-- Checkout Details--
-//const fName= faker.name.firstname();
-//const lName=faker.name.lastname();
-//await 
-//.typeText(faker.name.firstname('#first-name'));
-//await element(by.name('#first-name')).sendKeys(faker.name.firstname());
-//await element(by.name('#last-name')).sendKeys(faker.name.lastname());
-await t
-.typeText('#first-name','Harry')
-.typeText('#last-name','Potter')
+
+ await t
+.typeText('#first-name',randomFirstName)
+.typeText('#last-name',randomLasttName)
 .typeText('#postal-code','1258')
 .click('#continue').wait(3000)
 
@@ -53,32 +55,12 @@ await t
 
 });
 
-  // Check Price
-   //  .hover(CheckPrice)
-   
-  /*   
-     //Add to Cart
-     .click(AddtoCard1) 
-     .wait(3000)
-     .click(AddtoCard2)
-     .wait(3000)
 
-     //View Shopping Cart
-     .click(ShoppingCart)
-     .wait(3000)
+
+function newFunction() {
+  faker.name.firstName(); // => "Katharina"
+  faker.name.firstName(); // 'Antwan'
+  faker.name.firstName('female'); // 'Victoria'
+  faker.name.firstName('male');
+}
  
-     //Check Out 
-     .click(Checkout)
-     .wait(4000)
-    
-     //User Details for checkout
-    .typeText(RandomFname,'Harry')
-    .typeText(RandomLname,'Potter')
-    .typeText(RandomZipCode,'1258')
-    .wait(3000)
-    .click(Continue)
-    .wait(3000)
-
-    // Finish
-	.click(Finish)
-    .wait(3000); */

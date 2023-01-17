@@ -16,12 +16,12 @@ class DetailsPage {
         
   
     }
-    async Details(firstname: string, lastname: string,zipcode: string){
+    async Details(firstName: string, lastName: string,zipcode: string){
         await t
         //faker.name.firstName()
         //faker.name.lastName() 
-        .typeText(this.FirstName,firstname)
-        .typeText(this.LastName,lastname)
+        .typeText(this.FirstName,firstName)
+        .typeText(this.LastName,lastName)
         .typeText(this.ZipCode,zipcode)
         .click(this.ContinueButton);
 
