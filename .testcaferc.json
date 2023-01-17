@@ -1,6 +1,6 @@
 {
 "browser":"chrome",
-
+"baseUrl":"https://www.saucedemo.com",
 "skipUncaughtErrors": true,
 "userVariables": {
     "username":"performance_glitch_user",
